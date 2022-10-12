@@ -7,6 +7,7 @@ path_to_file = 'base.xlsx'
 
 
 def check_url():
+    global word_cell
     search_text = input(str('Print url: '))
     search_text = search_text.lower()
     print('Search:', search_text)
@@ -18,7 +19,7 @@ def check_url():
 
     column_max = sheet_active.max_column  # Получаем количество строк
 
-    print('В файле:', path_to_file, '\n Cтолбцов:', row_max, '\n Колонок:', column_max)
+    print('In file:', path_to_file, '\n Rows:', row_max, '\n Columns:', column_max)
 
     row_min = 1  # Переменная, отвечающая за номер строки
     column_min = 1  # Переменная, отвечающая за номер столбца
@@ -44,9 +45,9 @@ def check_url():
 
     column_min = column_min + 1
     if match is not None:
-        print('Yes')
+        print('Found in a cell:', word_cell)
     else:
-        print('None')
+        print('No matches')
 
 
 if __name__ == '__main__':
